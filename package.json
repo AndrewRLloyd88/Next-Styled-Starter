@@ -8,6 +8,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "@babel/core": "^7.14.3",
+    "babel-plugin-styled-components": "^1.12.0",
     "next": "10.2.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
@@ -17,5 +19,58 @@
     "@types/react": "17.0.9",
     "@types/styled-components": "^5.1.9",
     "typescript": "4.3.2"
+  },
+  "babel": {
+    "env": {
+      "development": {
+        "presets": [
+          "next/babel"
+        ],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": true
+            }
+          ]
+        ]
+      },
+      "production": {
+        "presets": [
+          "next/babel"
+        ],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": true
+            }
+          ]
+        ]
+      },
+      "test": {
+        "presets": [
+          [
+            "next/babel",
+            {
+              "preset-env": {
+                "modules": "commonjs"
+              }
+            }
+          ]
+        ],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": true
+            }
+          ]
+        ]
+      }
+    }
   }
 }

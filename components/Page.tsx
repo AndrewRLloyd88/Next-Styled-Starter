@@ -12,7 +12,7 @@ const InnerStyles = styled.div`
   background-color: white;
 `;
 
-export default function Page({ children }) {
+export default function Page({ children }: any) {
   return (
     <div>
       <GlobalStyles />
